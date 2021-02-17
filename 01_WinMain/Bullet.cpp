@@ -24,17 +24,7 @@ void Bullet::Update()
 	vector<GameObject*> enemyList = 
 		ObjectManager::GetInstance()->GetObjectList(ObjectLayer::Enemey);
 
-	for (int i = 0; i < enemyList.size(); ++i)
-	{
-		RECT temp;
-		if (IntersectRect(&temp, &mRect, &enemyList[i]->GetRect()))
-		{
-			Enemy* enemy = (Enemy*)enemyList[i];
-			enemy->TakeDamage(10);
-			mIsDestroy = true;
-			break;
-		}
-	}
+	
 
 	if (mRect.left > WINSIZEX)
 		mIsDestroy = true;

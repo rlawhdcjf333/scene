@@ -13,6 +13,9 @@ void Scene2::Init()
 void Scene2::Release()
 {
 	mImageList.clear();
+	mImageList.shrink_to_fit();
+	IMAGEMANAGER->Release();
+	SoundPlayer::GetInstance()->Release();
 }
 
 void Scene2::Update()

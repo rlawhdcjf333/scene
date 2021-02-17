@@ -21,19 +21,20 @@ void Scene1::Init()
 void Scene1::Release()
 {
 	mImageList.clear();
+	mImageList.shrink_to_fit();
+	IMAGEMANAGER->Release();
+	SoundPlayer::GetInstance()->Release();
 }
 
 void Scene1::Update()
 {
 	if (Input::GetInstance()->GetKeyDown(VK_SPACE)) {
 
+		
 
 		SceneManager::GetInstance()->GetFrom() = L"Scene1";
 		SceneManager::GetInstance()->GetTo() = L"Scene2";
 		SceneManager::GetInstance()->LoadScene(L"LoadingScene");
-
-		
-
 
 		this->Release();
 	}

@@ -16,12 +16,12 @@ private:
 public:
 	~ImageManager();
 
-	void Init();
-
 	void LoadFromFile(wstring key, wstring filePath, int width, int height,
 		bool isTrans, COLORREF transColor = RGB(255,0,255));
 	void LoadFromFile(wstring key, wstring filePath, int width, int height,
 		int frameX, int frameY, bool isTrans, COLORREF transColor = RGB(255, 0, 255));
+
+	void Release();
 
 	Image* FindImage(wstring key);
 };
