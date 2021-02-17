@@ -23,6 +23,7 @@ void SceneManager::Init()
 	AddScene(L"Scene1", new Scene1);
 	AddScene(L"Scene2", new Scene2);
 	AddScene(L"LoadingScene", new LoadingScene);
+	GetFrom() = L"Scene2";
 
 }
 

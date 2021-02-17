@@ -4,6 +4,7 @@
 class LoadingScene : public Scene
 {
 	vector<function<void(void)>> mLoadList;
+
 	int mLoadIndex;
 	bool mIsEndLoading;
 

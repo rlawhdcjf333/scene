@@ -8,12 +8,25 @@ void LoadingScene::AddLoadFunc(const function<void(void)>& func)
 
 void LoadingScene::Init()
 {
-	for (int i = 0; i < 100; ++i) {
-		
-		AddLoadFunc([i]() {IMAGEMANAGER->LoadFromFile(L"Heart" + to_wstring(i), Resources(L"Heart.bmp"), 48, 44, true); });
+	if (SceneManager::GetInstance()->GetFrom() == L"Scene2") {
+		for (int i = 0; i < 100; ++i) {
+
+			AddLoadFunc([i]() {IMAGEMANAGER->LoadFromFile(L"Heart" + to_wstring(i), Resources(L"Heart.bmp"), 48, 44, true); });
+		}
+
+		AddLoadFunc([]() {SOUNDPLAYER->LoadFromFile(L"Test1", Resources(L"Test1.mp3"), true); });
 	}
 
-	AddLoadFunc([]() {SOUNDPLAYER->LoadFromFile(L"Test1", Resources(L"Test1.mp3"), true); });
+	if (SceneManager::GetInstance()->GetFrom() == L"Scene1") {
+		for (int i = 0; i < 100; ++i) {
+
+			AddLoadFunc([i]() {IMAGEMANAGER->LoadFromFile(L"Ball" + to_wstring(i), Resources(L"ball.bmp"), 60, 60, true); });
+		}
+
+		AddLoadFunc([]() {SOUNDPLAYER->LoadFromFile(L"Test2", Resources(L"Test2.mp3"), true); });
+	}
+
+
 	mLoadIndex = 0;
 	mIsEndLoading = false;
 }
@@ -30,10 +43,27 @@ void LoadingScene::Update()
 	{
 		mIsEndLoading = true;
 
-		if(Input::GetInstance()->GetKeyDown(VK_SPACE))	SceneManager::GetInstance()->LoadScene(L"Scene1");
+		if (Input::GetInstance()->GetKeyDown(VK_SPACE))
+		{
+			if (SceneManager::GetInstance()->GetFrom() == L"Scene1") {
+				SceneManager::GetInstance()->LoadScene(L"Scene2");
+				mLoadList.clear();
+				mLoadList.shrink_to_fit();
+			}
 
+			if (SceneManager::GetInstance()->GetFrom() == L"Scene2") {
+
+				SceneManager::GetInstance()->LoadScene(L"Scene1");
+				mLoadList.clear();
+				mLoadList.shrink_to_fit();
+			}
+		}
 		return;
 	}
+
+	
+
+
 	function<void(void)> func = mLoadList[mLoadIndex];
 	func();
 	mLoadIndex++;

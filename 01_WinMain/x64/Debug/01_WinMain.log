@@ -1,3 +1,4 @@
-﻿  Scene1.cpp
-c:\users\kga_5\desktop\01_winmain\scene1.cpp(39): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  01_WinMain.vcxproj -> C:\Users\KGA_5\Desktop\x64\Debug\01_WinMain.exe
+﻿  LoadingScene.cpp
+c:\users\kga_5\desktop\tp\github\scene\01_winmain\loadingscene.cpp(89): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\kga_5\desktop\tp\github\scene\01_winmain\loadingscene.cpp(93): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  01_WinMain.vcxproj -> C:\Users\KGA_5\Desktop\TP\github\scene\x64\Debug\01_WinMain.exe

@@ -19,9 +19,13 @@ void Scene2::Update()
 {
 	if (Input::GetInstance()->GetKeyDown(VK_SPACE)) {
 
+
+		SceneManager::GetInstance()->GetFrom() = L"Scene2";
+		SceneManager::GetInstance()->GetTo() = L"Scene1";
+		SceneManager::GetInstance()->LoadScene(L"LoadingScene");
+
 		this->Release();
 
-		SceneManager::GetInstance()->LoadScene(L"Scene1");
 	}
 }
 

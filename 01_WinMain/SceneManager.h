@@ -23,6 +23,11 @@ private:
 	map<wstring, Scene*> mSceneList;
 	Scene* mCurrentScene;						//ÇöÀç ¾À
 	typedef map<wstring, Scene*>::iterator SceneIter;
+
+	wstring fromStr;
+	wstring toStr;
+	
+
 public:
 	SceneManager();
 	~SceneManager();
@@ -33,5 +38,10 @@ public:
 
 	void AddScene(const wstring& sceneName,Scene* scene);
 	void LoadScene(const wstring& sceneName);
+
+	wstring& GetFrom() { return fromStr; }
+	wstring& GetTo() { return toStr; }
+
+
 };
 
