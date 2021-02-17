@@ -69,8 +69,8 @@ C:\Users\김종철\Documents\GitHub\scene\01_WinMain\Scene1.cpp(46,68): warning 
 C:\Users\김종철\Documents\GitHub\scene\01_WinMain\Scene2.cpp(38,68): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   SceneManager.cpp
   코드를 생성하고 있습니다...
-C:\Users\김종철\Documents\GitHub\scene\01_WinMain\Camera.cpp(111): warning C4717: 'Camera::RenderEllipse': 모든 제어 경로에서 재귀적입니다. 함수로 인해 런타임 스택 오버플로가 발생합니다.
 C:\Users\김종철\Documents\GitHub\scene\01_WinMain\Camera.cpp(106): warning C4717: 'Camera::RenderRect': 모든 제어 경로에서 재귀적입니다. 함수로 인해 런타임 스택 오버플로가 발생합니다.
+C:\Users\김종철\Documents\GitHub\scene\01_WinMain\Camera.cpp(111): warning C4717: 'Camera::RenderEllipse': 모든 제어 경로에서 재귀적입니다. 함수로 인해 런타임 스택 오버플로가 발생합니다.
   컴파일하고 있습니다...
   SoundPlayer.cpp
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(2468,23): warning C4244: '인수': 'const wchar_t'에서 'const _Elem'(으)로 변환하면서 데이터가 손실될 수 있습니다.
