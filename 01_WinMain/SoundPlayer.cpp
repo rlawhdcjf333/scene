@@ -141,17 +141,3 @@ void SoundPlayer::Stop(const wstring & keyName)
 	}
 }
 
-void SoundPlayer::Release()
-{
-	for (int i = 0; i < mActiveChannels.size(); ++i)
-	{
-		mActiveChannels[i].Channel->stop();
-	}
-
-	for (SoundIter iter = mSoundList.begin(); iter != mSoundList.end(); ++iter)
-	{
-		iter->second->release();
-	}
-	mSoundList.clear();
-
-}

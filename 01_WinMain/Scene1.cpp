@@ -22,8 +22,6 @@ void Scene1::Release()
 {
 	mImageList.clear();
 	mImageList.shrink_to_fit();
-	IMAGEMANAGER->Release();
-	SoundPlayer::GetInstance()->Release();
 }
 
 void Scene1::Update()
@@ -36,7 +34,7 @@ void Scene1::Update()
 		SceneManager::GetInstance()->GetTo() = L"Scene2";
 		SceneManager::GetInstance()->LoadScene(L"LoadingScene");
 
-		this->Release();
+		Release();
 	}
 }
 

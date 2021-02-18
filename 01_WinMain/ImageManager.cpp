@@ -42,14 +42,6 @@ void ImageManager::LoadFromFile(wstring key, wstring filePath, int width, int he
 	mImageList.insert(make_pair(key, newImage));
 }
 
-void ImageManager::Release()
-{
-	for (ImageIter iter = mImageList.begin(); iter != mImageList.end(); ++iter)
-	{
-		SafeDelete(iter->second);
-	}
-	mImageList.clear();
-}
 
 Image * ImageManager::FindImage(wstring key)
 {
